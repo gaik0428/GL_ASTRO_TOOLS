@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gaik0428/GL_ASTRO_TOOLS/static/css/main.6d8c8535.css",
-    "main.js": "/gaik0428/GL_ASTRO_TOOLS/static/js/main.a721e897.js",
-    "static/js/453.f5787aa1.chunk.js": "/gaik0428/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js",
-    "index.html": "/gaik0428/GL_ASTRO_TOOLS/index.html",
-    "main.6d8c8535.css.map": "/gaik0428/GL_ASTRO_TOOLS/static/css/main.6d8c8535.css.map",
-    "main.a721e897.js.map": "/gaik0428/GL_ASTRO_TOOLS/static/js/main.a721e897.js.map",
-    "453.f5787aa1.chunk.js.map": "/gaik0428/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js.map"
+    "main.css": "/GL_ASTRO_TOOLS/static/css/main.6d8c8535.css",
+    "main.js": "/GL_ASTRO_TOOLS/static/js/main.29e1b8e5.js",
+    "static/js/453.f5787aa1.chunk.js": "/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js",
+    "index.html": "/GL_ASTRO_TOOLS/index.html",
+    "main.6d8c8535.css.map": "/GL_ASTRO_TOOLS/static/css/main.6d8c8535.css.map",
+    "main.29e1b8e5.js.map": "/GL_ASTRO_TOOLS/static/js/main.29e1b8e5.js.map",
+    "453.f5787aa1.chunk.js.map": "/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d8c8535.css",
-    "static/js/main.a721e897.js"
+    "static/js/main.29e1b8e5.js"
   ]
 }
