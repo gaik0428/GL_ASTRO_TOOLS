@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GL_ASTRO_TOOLS/static/css/main.6d8c8535.css",
-    "main.js": "/GL_ASTRO_TOOLS/static/js/main.29e1b8e5.js",
+    "main.js": "/GL_ASTRO_TOOLS/static/js/main.d96b0773.js",
     "static/js/453.f5787aa1.chunk.js": "/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js",
     "index.html": "/GL_ASTRO_TOOLS/index.html",
     "main.6d8c8535.css.map": "/GL_ASTRO_TOOLS/static/css/main.6d8c8535.css.map",
-    "main.29e1b8e5.js.map": "/GL_ASTRO_TOOLS/static/js/main.29e1b8e5.js.map",
+    "main.d96b0773.js.map": "/GL_ASTRO_TOOLS/static/js/main.d96b0773.js.map",
     "453.f5787aa1.chunk.js.map": "/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d8c8535.css",
-    "static/js/main.29e1b8e5.js"
+    "static/js/main.d96b0773.js"
   ]
 }
