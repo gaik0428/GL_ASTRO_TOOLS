@@ -19,7 +19,7 @@ function Welcome() {
     // Example credentials (replace with real auth logic)
     if (username === 'admin' && password === '1234') {
       setError('');
-      navigate('/GL_ASTRO_TOOLS/'); // Redirect to home
+      navigate('/'); // Redirect to home
     } else {
       setError('Invalid username or password.');
     }
@@ -32,12 +32,12 @@ function Welcome() {
           <div className="main-container">
             <div className="image-column">
               <img
-                src="/GL Astro Tools UI/Logo.png"
+                src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/Logo.png`}
                 alt="Logo"
                 style={{ width: '350px', height: 'auto' }}
               />
               <img
-                src="/GL Astro Tools UI/Pushan-Devta.png"
+                src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/Pushan-Devta.png`}
                 alt="Pushan Devta"
                 style={{ width: '350px', height: 'auto' }}
               />

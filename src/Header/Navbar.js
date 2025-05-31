@@ -69,7 +69,7 @@ function Navbar() {
       <div className="header">
         {/* Logo Section */}
         <div className="image-column">
-          <img src={`${process.env.PUBLIC_URL}/GL_Astro_Tools_UI/Logo.png`} 
+          <img src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/Logo.png`} 
             alt="Logo"
             style={{ width: '300px', height: 'auto' }}
           />
@@ -146,7 +146,7 @@ function Navbar() {
       <div className={`mobile-sidebar${sidebarOpen ? ' open' : ''}`}>
         <div className="sidebar-content">
           <a
-            href="/GL_ASTRO_TOOLS/"
+            href="/"
             className={`nav-item${currentHash === '/' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
@@ -184,7 +184,7 @@ function Navbar() {
         <nav className="navbar">
           <div className="navbar-left">
             <a
-              href="/GL_ASTRO_TOOLS/"
+              href="/"
               className={`nav-item${currentHash === '/' ? ' active' : ''}`}
             >
               Home
