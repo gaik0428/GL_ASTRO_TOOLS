@@ -155,21 +155,21 @@ function Navbar() {
           </a>
           <a
             href="/affliction-report"
-            className={`nav-item${location.pathname === '/affliction-report' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/#/affliction-report' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Affliction Report
           </a>
           <a
             href="/vastu-jyotish"
-            className={`nav-item${location.pathname === '/vastu-jyotish' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/#/vastu-jyotish' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Vastu Jyotish
           </a>
           <a
             href="/prashna"
-            className={`nav-item${location.pathname === '/prashna' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/#/prashna' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Prashna
@@ -192,19 +192,19 @@ function Navbar() {
             </a>
             <a
               href="/affliction-report"
-              className={`nav-item${location.pathname === '/affliction-report' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/#affliction-report' ? ' active' : ''}`}
             >
               Affliction Report
             </a>
             <a
               href="/vastu-jyotish"
-              className={`nav-item${location.pathname === '/vastu-jyotish' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/#vastu-jyotish' ? ' active' : ''}`}
             >
               Vastu Jyotish
             </a>
             <a
               href="/prashna"
-              className={`nav-item${location.pathname === '/prashna' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/#prashna' ? ' active' : ''}`}
             >
               Prashna
             </a>
