@@ -69,7 +69,7 @@ function Navbar() {
         {/* Logo Section */}
         <div className="image-column">
           <img
-            src="/GL Astro Tools UI/Logo.png"
+            src="/GL_ASTRO_TOOLS/#/GL Astro Tools UI/Logo.png"
             alt="Logo"
             style={{ width: '300px', height: 'auto' }}
           />
@@ -148,34 +148,34 @@ function Navbar() {
         <div className="sidebar-content">
           <a
             href="/"
-            className={`nav-item${location.pathname === '/' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Home
           </a>
           <a
             href="/affliction-report"
-            className={`nav-item${location.pathname === '/#/affliction-report' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#/affliction-report' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Affliction Report
           </a>
           <a
             href="/vastu-jyotish"
-            className={`nav-item${location.pathname === '/#/vastu-jyotish' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#/vastu-jyotish' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Vastu Jyotish
           </a>
           <a
             href="/prashna"
-            className={`nav-item${location.pathname === '/#/prashna' ? ' active' : ''}`}
+            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#/prashna' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Prashna
           </a>
           <a href="/admin" className="nav-item" onClick={handleSidebarClose}>Admin</a>
-          <a href="/logout" className="nav-item" onClick={handleSidebarClose}>Logout</a>
+          <a href="/GL_ASTRO_TOOLS/logout" className="nav-item" onClick={handleSidebarClose}>Logout</a>
         </div>
         <div className="sidebar-backdrop" onClick={handleSidebarClose}></div>
       </div>
@@ -186,32 +186,32 @@ function Navbar() {
           <div className="navbar-left">
             <a
               href="/"
-              className={`nav-item${location.pathname === '/' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/' ? ' active' : ''}`}
             >
               Home
             </a>
             <a
               href="/affliction-report"
-              className={`nav-item${location.pathname === '/#affliction-report' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#affliction-report' ? ' active' : ''}`}
             >
               Affliction Report
             </a>
             <a
               href="/vastu-jyotish"
-              className={`nav-item${location.pathname === '/#vastu-jyotish' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#vastu-jyotish' ? ' active' : ''}`}
             >
               Vastu Jyotish
             </a>
             <a
               href="/prashna"
-              className={`nav-item${location.pathname === '/#prashna' ? ' active' : ''}`}
+              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#prashna' ? ' active' : ''}`}
             >
               Prashna
             </a>
           </div>
           <div className="navbar-right">
-            <a href="/admin" className="nav-item">Admin</a>
-            <a href="/#/login" className="nav-item">Logout</a>
+            <a href="/GL_ASTRO_TOOLS/admin" className="nav-item">Admin</a>
+            <a href="/GL_ASTRO_TOOLS/#/login" className="nav-item">Logout</a>
           </div>
         </nav>
       </div>
