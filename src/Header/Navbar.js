@@ -146,7 +146,7 @@ function Navbar() {
       <div className={`mobile-sidebar${sidebarOpen ? ' open' : ''}`}>
         <div className="sidebar-content">
           <a
-            href="/"
+            href="/GL_ASTRO_TOOLS/"
             className={`nav-item${currentHash === '/' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
@@ -184,7 +184,7 @@ function Navbar() {
         <nav className="navbar">
           <div className="navbar-left">
             <a
-              href="/"
+              href="/GL_ASTRO_TOOLS/"
               className={`nav-item${currentHash === '/' ? ' active' : ''}`}
             >
               Home
