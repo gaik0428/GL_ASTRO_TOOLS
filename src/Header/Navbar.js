@@ -211,7 +211,7 @@ function Navbar() {
           </div>
           <div className="navbar-right">
             <a href="/admin" className="nav-item">Admin</a>
-            <a href="/logout" className="nav-item">Logout</a>
+            <a href="/#/login" className="nav-item">Logout</a>
           </div>
         </nav>
       </div>
