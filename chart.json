@@ -1,0 +1,128 @@
+[
+	{
+		"HouseNo": 1,
+		"SignNo": 2,
+		"Planets": [
+			{
+				"Symbol": "Ve",
+				"Degree": 0,
+				"Minute": 0,
+				"Second": 0
+			},
+			{
+				"Symbol": "As",
+				"Degree": 8,
+				"Minute": 0,
+				"Second": 0
+			}
+		]
+	},
+	{
+		"HouseNo": 2,
+		"SignNo": 3,
+		"Planets": []
+	},
+	{
+		"HouseNo": 3,
+		"SignNo": 4,
+		"Planets": []
+	},
+	{
+		"HouseNo": 4,
+		"SignNo": 5,
+		"Planets": [
+			{
+				"Symbol": "Ma",
+				"Degree": 23,
+				"Minute": 0,
+				"Second": 0
+			}
+		]
+	},
+	{
+		"HouseNo": 5,
+		"SignNo": 6,
+		"Planets": [
+			{
+				"Symbol": "Ra",
+				"Degree": 4,
+				"Minute": 0,
+				"Second": 0
+			}
+		]
+	},
+	{
+		"HouseNo": 6,
+		"SignNo": 7,
+		"Planets": []
+	},
+	{
+		"HouseNo": 7,
+		"SignNo": 8,
+		"Planets": []
+	},
+	{
+		"HouseNo": 8,
+		"SignNo": 9,
+		"Planets": []
+	},
+	{
+		"HouseNo": 9,
+		"SignNo": 10,
+		"Planets": [
+			{
+				"Symbol": "Ju",
+				"Degree": 26,
+				"Minute": 0,
+				"Second": 0
+			}
+		]
+	},
+	{
+		"HouseNo": 10,
+		"SignNo": 11,
+		"Planets": []
+	},
+	{
+		"HouseNo": 11,
+		"SignNo": 12,
+		"Planets": [
+			{
+				"Symbol": "Sa",
+				"Degree": 20,
+				"Minute": 0,
+				"Second": 0
+			},
+			{
+				"Symbol": "Ke",
+				"Degree": 4,
+				"Minute": 0,
+				"Second": 0
+			}
+		]
+	},
+	{
+		"HouseNo": 12,
+		"SignNo": 1,
+		"Planets": [
+			{
+				"Symbol": "Su",
+				"Degree": 21,
+				"Minute": 0,
+				"Second": 0
+			},
+			{
+				"Symbol": "Mo",
+				"Degree": 10,
+				"Minute": 0,
+				"Second": 0
+			},
+			{
+				"Symbol": "Me",
+				"Degree": 5,
+				"Minute": 0,
+				"Second": 0
+			}
+		]
+	}
+]

@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 8px;
+  border: 2px solid #f7f7f7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* For Firefox */
+div[style*="overflowY: 'auto'"] {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #e0e0e0;
+}

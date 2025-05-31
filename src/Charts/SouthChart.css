@@ -1,0 +1,21 @@
+.south-chart {
+  width: 450px;
+  height: 450px;
+  border: 3px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  box-sizing: border-box;
+  position: relative;
+  background: white;
+}
+
+@media (max-width: 1640px) {
+  .south-chart {
+    width: 95vw !important;
+    height: 95vw !important;
+    min-width: 0 !important;
+    max-width: 95vw !important;
+    max-height: 95vw !important;
+  }
+}

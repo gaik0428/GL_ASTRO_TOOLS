@@ -1,0 +1,13 @@
+.tab-content {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.affliction-report-tabs-container {
+  display: flex;
+  width: 1000px;
+  gap: 2px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  font-family: 'Arial', sans-serif;
+}

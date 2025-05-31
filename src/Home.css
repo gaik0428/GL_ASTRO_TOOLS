@@ -1,0 +1,251 @@
+.home-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-container {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+/* Make left panel fixed width and sticky */
+.left-panel {
+  position: sticky;
+  top: 80px; /* adjust depending on your Navbar height */
+  width: 180px;
+  flex-shrink: 0;
+  background-color: white; /* optional: to cover content scrolling under it */
+  padding-right: 150px;
+  padding-left: 40px;
+  z-index: 10;
+}
+
+/* Ensure right side has space */
+.tab-content {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.tabs-container {
+  display: flex;
+  gap: 2px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  font-family: 'Arial', sans-serif;
+  width:500px;
+  padding-left: 5px;
+}
+
+.tab-button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #0071ce;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 12px 30px;
+  border-radius: 10px;
+  transition: background-color 0.3s, font-weight 0.3s;
+}
+
+.tab-button.active {
+  background-color: #0071ce;
+  color: white;
+  font-weight: bold;
+}
+
+
+.astro-data-container {
+  display: flex;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;      /* Change from 110% to 100% */
+}
+
+.astro-data-column {
+  flex: 1;
+  padding: 2px 15px;
+  text-align: left;
+}
+
+.astro-data-row {
+  display: flex;
+  margin-bottom: 2px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.astro-data-label {
+  font-weight: bold;
+  min-width: 150px;
+  text-align: left;
+  font-size: 17px;
+}
+
+.astro-data-value {
+  flex: 1;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.vargas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px 0px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1300px;
+  justify-items: center;
+  align-items: start;
+  margin-left: 120px;
+}
+
+.tab-inner-content {
+  padding-left: 250px;
+}
+
+body, .home-root {
+  overflow-x: hidden;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 1640px) {
+  .home-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 0 0 0;
+  }
+  .left-panel {
+    position: static;
+    width: 100%;
+    padding: 0 0 20px 0;
+    margin-bottom: 10px;
+  }
+  .tab-content {
+    padding-left: 0 !important;
+  }
+  .vargas-grid {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .tab-inner-content {
+    padding-left: 0;
+  }
+  .tab-content {
+    width: 100%;
+    padding: 0;
+  }
+  .tabs-container {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .astro-data-container {
+    flex-direction: column;
+    width: 60%;
+    max-width: 100vw;
+  }
+  .astro-data-column {
+    width: 100%;
+    padding: 0;
+  }
+  .tab-content {
+    padding-left: 0 !important;
+  }
+  .tabs-container {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .tab-button {
+    font-size: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-container {
+    padding-top: 8px;
+    padding-bottom: 0;
+  }
+  .left-panel {
+    padding: 0 0 10px 0;
+    margin-bottom: 8px;
+    background: none;
+  }
+  .tabs-container {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    gap: 2px;
+  }
+  .tab-button {
+    font-size: 14px;
+    padding: 8px 8px;
+    border-radius: 7px;
+  }
+  .astro-data-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100vw;
+    font-size: 14px;
+  }
+  .astro-data-column {
+    width: 100%;
+    padding: 0 2vw;
+  }
+  .astro-data-label,
+  .astro-data-value {
+    font-size: 14px;
+  }
+  .vargas-grid {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    width: 100%;
+    max-width: 100vw;
+    gap: 10px 0;
+  }
+  .tab-content {
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs-container {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    gap: 1px;
+  }
+  .tab-button {
+    font-size: 12px;
+    padding: 6px 6px;
+    border-radius: 6px;
+  }
+  .astro-data-label,
+  .astro-data-value {
+    font-size: 12px;
+  }
+}

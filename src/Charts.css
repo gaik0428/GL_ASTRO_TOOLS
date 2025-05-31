@@ -1,0 +1,11 @@
+@media (max-width: 1640px) {
+  .chart-selector-row {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
