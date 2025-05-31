@@ -19,7 +19,7 @@ function Welcome() {
     // Example credentials (replace with real auth logic)
     if (username === 'admin' && password === '1234') {
       setError('');
-      navigate('/'); // Redirect to home
+      navigate('/GL_ASTRO_TOOLS/'); // Redirect to home
     } else {
       setError('Invalid username or password.');
     }
