@@ -16,6 +16,7 @@ function Navbar() {
   const [language, setLanguage] = useState('english');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
+  const currentHash = location.hash || '#/';
 
   const handleSidebarToggle = () => setSidebarOpen(!sidebarOpen);
   const handleSidebarClose = () => setSidebarOpen(false);
@@ -68,8 +69,7 @@ function Navbar() {
       <div className="header">
         {/* Logo Section */}
         <div className="image-column">
-          <img
-            src="/GL_ASTRO_TOOLS/#/GL Astro Tools UI/Logo.png"
+          <img src={`${process.env.PUBLIC_URL}/GL_Astro_Tools_UI/Logo.png`} 
             alt="Logo"
             style={{ width: '300px', height: 'auto' }}
           />
@@ -100,8 +100,7 @@ function Navbar() {
               onClick={() => handleIconClick(icon)}
               style={{ cursor: 'pointer', position: 'relative' }}
             >
-              <img
-                src={`/GL Astro Tools UI/${icon}.png`}
+              <img src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/${icon}.png`}
                 alt={icon}
                 className="image-box-img"
               />
@@ -148,34 +147,34 @@ function Navbar() {
         <div className="sidebar-content">
           <a
             href="/GL_ASTRO_TOOLS/"
-            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/' ? ' active' : ''}`}
+            className={`nav-item${currentHash === '/' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Home
           </a>
           <a
             href="/GL_ASTRO_TOOLS/#/affliction-report"
-            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#/affliction-report' ? ' active' : ''}`}
+            className={`nav-item${currentHash === '#/affliction-report' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Affliction Report
           </a>
           <a
             href="/GL_ASTRO_TOOLS/#/vastu-jyotish"
-            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#/vastu-jyotish' ? ' active' : ''}`}
+            className={`nav-item${currentHash === '#/vastu-jyotish' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Vastu Jyotish
           </a>
           <a
             href="/GL_ASTRO_TOOLS/#/prashna"
-            className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#/prashna' ? ' active' : ''}`}
+            className={`nav-item${currentHash === '#/prashna' ? ' active' : ''}`}
             onClick={handleSidebarClose}
           >
             Prashna
           </a>
           <a href="/GL_ASTRO_TOOLS/#/admin" className="nav-item" onClick={handleSidebarClose}>Admin</a>
-          <a href="/GL_ASTRO_TOOLS/logout" className="nav-item" onClick={handleSidebarClose}>Logout</a>
+          <a href="/GL_ASTRO_TOOLS/#/login" className="nav-item" onClick={handleSidebarClose}>Logout</a>
         </div>
         <div className="sidebar-backdrop" onClick={handleSidebarClose}></div>
       </div>
@@ -186,25 +185,25 @@ function Navbar() {
           <div className="navbar-left">
             <a
               href="/GL_ASTRO_TOOLS/"
-              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/' ? ' active' : ''}`}
+              className={`nav-item${currentHash === '/' ? ' active' : ''}`}
             >
               Home
             </a>
             <a
               href="/GL_ASTRO_TOOLS/#/affliction-report"
-              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#affliction-report' ? ' active' : ''}`}
+              className={`nav-item${currentHash === '#/affliction-report' ? ' active' : ''}`}
             >
               Affliction Report
             </a>
             <a
               href="/GL_ASTRO_TOOLS/#/vastu-jyotish"
-              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#vastu-jyotish' ? ' active' : ''}`}
+              className={`nav-item${currentHash === '#/vastu-jyotish' ? ' active' : ''}`}
             >
               Vastu Jyotish
             </a>
             <a
               href="/GL_ASTRO_TOOLS/#/prashna"
-              className={`nav-item${location.pathname === '/GL_ASTRO_TOOLS/#prashna' ? ' active' : ''}`}
+              className={`nav-item${currentHash === '#/admin' ? ' active' : ''}`}
             >
               Prashna
             </a>
