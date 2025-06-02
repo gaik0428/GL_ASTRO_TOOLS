@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import './SaveForm.css';
 
 const buttonStyle = {
   display: 'block',
@@ -36,6 +37,7 @@ function SaveForm({ onSaveChart, onSaveChartAs, onSaveNotes, onClose }) {
   return (
     <div
       ref={dropdownRef}
+      className="save-form-dropdown"
       style={{
         position: 'absolute',
         top: '100%',
@@ -46,15 +48,15 @@ function SaveForm({ onSaveChart, onSaveChartAs, onSaveNotes, onClose }) {
         borderRadius: '18px',
         boxShadow: '0 2px 12px rgba(0,0,0,0.12)',
         zIndex: 1000,
-        minWidth: '300px',
+        minWidth: '200px',
         padding: '18px 18px 8px 18px',
         textAlign: 'left',
         marginTop: '8px',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',marginBottom: 8 }}>
+      <div className="save-form-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8 }}>
         <img
-          src="/GL Astro Tools UI/save.png"
+          src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/save.png`}
           alt="Save"
           style={{ width: 48, height: 48, marginRight: 10 }}
         />

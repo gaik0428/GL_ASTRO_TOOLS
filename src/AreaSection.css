@@ -1,0 +1,42 @@
+@media (max-width: 900px) {
+  .area-section-root {
+    width: 100% !important;
+    margin-bottom: 30px !important;
+    padding: 0 4px !important;
+    box-sizing: border-box;
+  }
+  .area-section-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+  .area-section-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    margin-left: 0 !important;
+    margin-bottom: 12px !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .area-section-controls > div {
+    margin-left: 0 !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+  }
+  .area-section-controls select {
+    font-size: 16px !important;
+    padding: 8px 8px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .area-section-chart-switcher {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+
+}

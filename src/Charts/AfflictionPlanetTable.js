@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AfflictionPlanetTable.css'; // Assuming you have a CSS file for styles
 
 const data = [
   {
@@ -137,15 +138,6 @@ const columnKeyMap = {
   "Dashvarga": "dashvarga"
 };
 
-const cellStyle = {
-  border: "2px solid black",
-  fontWeight: 700,
-  fontSize: 18,
-  textAlign: "center",
-  padding: "8px 10px",
-  fontFamily: "Segoe UI, Arial, sans-serif",
-};
-
 const getCellBg = (col, val) => {
   if (col === "Planet") return "#0070b8";
 
@@ -197,16 +189,9 @@ const AfflictionPlanetTable = () => {
   };
 
   return (
-    <div style={{ overflowX: "auto", marginTop: "80px", marginLeft: "25px", marginBottom: "75px"}}>
+    <div className='affliction-planet-table-grid'>
         {/* Toggle Container */}
-        <div style={{ 
-            display: 'flex', 
-            justifyContent: 'flex-end', 
-            alignItems: 'center', 
-            marginBottom: '20px',
-            gap: '12px',
-            marginRight: '70px',
-        }}>
+        <div className='affliction-planet-table-toggle-container'>
             <div 
             style={toggleStyle}
             onClick={() => setShowPlanetNames(!showPlanetNames)}
@@ -223,7 +208,7 @@ const AfflictionPlanetTable = () => {
             </span>
 
         </div>
-        <table style={{ borderCollapse: "collapse", minWidth: 800, width: "98%", tableLayout: "fixed" }}>
+        <table className='affliction-planet-table'>
           <colgroup>
             {header.map((_, index) => (
               <col key={index} style={{ width: `${100 / header.length}%` }} />
@@ -234,13 +219,7 @@ const AfflictionPlanetTable = () => {
               {header.map((col) => (
                 <th
                   key={col}
-                  style={{
-                    ...cellStyle,
-                    background: "#0070b8",
-                    color: "#fff",
-                    fontSize: 18,
-                    border: "2px solid black",
-                  }}
+                  className='affliction-planet-table-header'
                 >
                   {col}
                 </th>
@@ -253,8 +232,8 @@ const AfflictionPlanetTable = () => {
                 {header.map((col) => (
                   <td
                     key={col}
+                    className='affliction-planet-table-cell'
                     style={{
-                      ...cellStyle,
                       background: getCellBg(col, row[columnKeyMap[col]]),
                       color: getCellColor(col, row, row[columnKeyMap[col]]),
                       borderLeft: "2px solid black",

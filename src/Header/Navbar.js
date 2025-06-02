@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import BirthForm from '../Form/BirthForm';
 import FolderForm from '../Form/FolderForm';
@@ -14,12 +14,24 @@ function Navbar() {
   const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [language, setLanguage] = useState('english');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
-  const currentHash = location.hash || '#/';
+  const navigate = useNavigate();
+  const currentPath = location.pathname + location.hash;
 
-  const handleSidebarToggle = () => setSidebarOpen(!sidebarOpen);
-  const handleSidebarClose = () => setSidebarOpen(false);
+  // Navigation handler
+  const handleNavigation = (path, event) => {
+    // For hash links, let browser handle navigation
+    if (path.startsWith('#/')) {
+      // Do nothing, let <a href> handle it
+    } else {
+      event.preventDefault();
+      if (path.startsWith('/GL_ASTRO_TOOLS/')) {
+        window.location.href = path;
+      } else {
+        navigate(path);
+      }
+    }
+  };
 
   const handleIconClick = (icon) => {
     if (icon === 'birth') {
@@ -44,7 +56,7 @@ function Navbar() {
       setShowFolderDropdown(false);
       setShowSaveDropdown(false);
       setShowSettingsDropdown(false);
-    }else {
+    } else {
       setShowFolderDropdown(false);
       setShowSaveDropdown(false);
       setShowSettingsDropdown(false);
@@ -56,12 +68,18 @@ function Navbar() {
   const handleDropdownClick = (action) => {
     setShowFolderDropdown(false);
     if (action === 'openChart') {
-      // Add your logic to open chart
       alert('Open Chart clicked');
     } else if (action === 'openNotes') {
-      // Add your logic to open notes
       alert('Open Notes clicked');
     }
+  };
+
+  // Check if current path matches the nav item
+  const isActive = (path) => {
+    if (path === '/') {
+      return currentPath === '/GL_ASTRO_TOOLS/' || currentPath === '/';
+    }
+    return currentPath.includes(path.replace('#', ''));
   };
 
   return (
@@ -136,81 +154,50 @@ function Navbar() {
           ))}
         </div>
       </div>
-      {/* Hamburger icon for mobile */}
-      <div className="mobile-nav-icon" onClick={handleSidebarToggle}>
-        <span className="hamburger"></span>
-        <span className="hamburger"></span>
-        <span className="hamburger"></span>
-      </div>
-      {/* Sidebar */}
-      <div className={`mobile-sidebar${sidebarOpen ? ' open' : ''}`}>
-        <div className="sidebar-content">
-          <a
-            href="/GL_ASTRO_TOOLS/"
-            className={`nav-item${currentHash === '/' ? ' active' : ''}`}
-            onClick={handleSidebarClose}
-          >
-            Home
-          </a>
-          <a
-            href="/GL_ASTRO_TOOLS/#/affliction-report"
-            className={`nav-item${currentHash === '#/affliction-report' ? ' active' : ''}`}
-            onClick={handleSidebarClose}
-          >
-            Affliction Report
-          </a>
-          <a
-            href="/GL_ASTRO_TOOLS/#/vastu-jyotish"
-            className={`nav-item${currentHash === '#/vastu-jyotish' ? ' active' : ''}`}
-            onClick={handleSidebarClose}
-          >
-            Vastu Jyotish
-          </a>
-          <a
-            href="/GL_ASTRO_TOOLS/#/prashna"
-            className={`nav-item${currentHash === '#/prashna' ? ' active' : ''}`}
-            onClick={handleSidebarClose}
-          >
-            Prashna
-          </a>
-          <a href="/GL_ASTRO_TOOLS/#/admin" className="nav-item" onClick={handleSidebarClose}>Admin</a>
-          <a href="/GL_ASTRO_TOOLS/#/login" className="nav-item" onClick={handleSidebarClose}>Logout</a>
-        </div>
-        <div className="sidebar-backdrop" onClick={handleSidebarClose}></div>
-      </div>
 
-      {/* Desktop Navigation Bar */}
+      {/* Responsive Navigation Bar */}
       <div className='nav-wrapper'>
         <nav className="navbar">
           <div className="navbar-left">
             <a
               href="/GL_ASTRO_TOOLS/"
-              className={`nav-item${currentHash === '/' ? ' active' : ''}`}
+              className={`nav-item${isActive('/') ? ' active' : ''}`}
+              onClick={(e) => handleNavigation('/GL_ASTRO_TOOLS/', e)}
             >
               Home
             </a>
             <a
-              href="/GL_ASTRO_TOOLS/#/affliction-report"
-              className={`nav-item${currentHash === '#/affliction-report' ? ' active' : ''}`}
+              href="#/affliction-report"
+              className={`nav-item${isActive('/affliction-report') ? ' active' : ''}`}
             >
               Affliction Report
             </a>
             <a
-              href="/GL_ASTRO_TOOLS/#/vastu-jyotish"
-              className={`nav-item${currentHash === '#/vastu-jyotish' ? ' active' : ''}`}
+              href="#/vastu-jyotish"
+              className={`nav-item${isActive('/vastu-jyotish') ? ' active' : ''}`}
             >
               Vastu Jyotish
             </a>
             <a
-              href="/GL_ASTRO_TOOLS/#/prashna"
-              className={`nav-item${currentHash === '#/admin' ? ' active' : ''}`}
+              href="#/prashna"
+              className={`nav-item${isActive('/prashna') ? ' active' : ''}`}
             >
               Prashna
             </a>
           </div>
           <div className="navbar-right">
-            <a href="/GL_ASTRO_TOOLS/admin" className="nav-item">Admin</a>
-            <a href="/GL_ASTRO_TOOLS/#/login" className="nav-item">Logout</a>
+            <a 
+              href="#/admin" 
+              className={`nav-item${isActive('/admin') ? ' active' : ''}`}
+            >
+              Admin
+            </a>
+            <a 
+              href="#/login" 
+              className={`nav-item${isActive('/login') ? ' active' : ''}`}
+            >
+              Logout
+            </a>
           </div>
         </nav>
       </div>

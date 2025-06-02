@@ -293,7 +293,7 @@ const NorthChart = () => {
         style={{
           width: '450px',
           height: '450px',
-          border: '10px solid black',
+          border: '8px solid black',
           position: 'relative',
           boxSizing: 'border-box'
         }}
@@ -309,7 +309,7 @@ const NorthChart = () => {
           left: '50%',
           width: '70.7%',
           height: '70.7%',
-          border: '6px solid black',
+          border: '4px solid black',
           transform: 'translate(-50%, -50%) rotate(45deg)',
           boxSizing: 'border-box'
         }}>

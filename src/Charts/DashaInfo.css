@@ -1,0 +1,121 @@
+.dasha-info-root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dasha-header-nav {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 10px;
+  align-items: center;
+  margin-left: 120px;
+  justify-content: center;
+}
+
+.dasha-header-nav .nav-item {
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px 32px;
+  box-sizing: border-box;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.dasha-header-nav .nav-item.active {
+  background: #f18736;
+  color: #fff;
+  box-shadow: 0 2px 8px #f1873622;
+}
+
+.dasha-header-nav .nav-item:not(.active) {
+  color: #f18736;
+  margin-left: 8px;
+  background: none;
+  box-shadow: none;
+}
+
+.dasha-main-title {
+  color: #0a186a;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.dasha-period {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.dasha-period .label {
+  color: #ff2222;
+  font-weight: 700;
+}
+
+.dasha-period.ad { margin-left: 50px; }
+.dasha-period.pd { margin-left: 100px; }
+
+.dasha-sookshma-title {
+  color: #0a186a;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.dasha-sookshma-list {
+  margin-left: 150px;
+}
+
+.dasha-sookshma-item {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff2222;
+  margin-bottom: 2px;
+}
+
+.dasha-sookshma-item .value {
+  color: #222;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .dasha-info-root {
+    padding: 16px;
+    max-width: 100%;
+  }
+  .dasha-header-nav {
+    margin-left: 0;
+  }
+  .dasha-sookshma-list {
+    margin-left: 0;
+  }
+  .dasha-period.ad,
+  .dasha-period.pd {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dasha-info-root {
+    padding: 8px;
+  }
+  .dasha-header-nav .nav-item {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  .dasha-main-title,
+  .dasha-sookshma-title {
+    font-size: 16px;
+  }
+  .dasha-period,
+  .dasha-sookshma-item {
+    font-size: 14px;
+  }
+}

@@ -5,9 +5,95 @@
 
 .affliction-report-tabs-container {
   display: flex;
-  width: 1000px;
+  width: 800px;
   gap: 2px;
+  margin: 0 auto;
   padding-bottom: 20px;
   padding-top: 10px;
   font-family: 'Arial', sans-serif;
+}
+
+.graph-chart-container {
+  width: 100%;
+  min-height: 400px; /* or any valid fallback height */
+  background: #fff;
+  overflow-x: auto;
+  margin-top: 80px;
+  margin-left: 200px;
+}
+
+.affliction-planet-table-container {
+  margin-left: 120px;
+}
+
+.life-area-section-container {
+  margin-left: 200px;
+}
+
+@media (max-width: 1640px) {
+  .graph-chart-container {
+    margin-left: 120px;
+  }
+
+  .affliction-planet-table-container {
+    margin-left: 100px;
+  } 
+}
+
+@media (max-width: 1366px) {
+  .graph-chart-container {
+    margin-left: 150px;
+  }
+  
+  .affliction-planet-table-container {
+    margin-left: 0px;
+  }
+
+  .life-area-section-container {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .graph-chart-container {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .graph-chart-container {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+  }
+  .graph-chart-container,
+  .affliction-planet-table-container,
+  .life-area-section-container {
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: auto !important; /* allow horizontal scroll for chart/table only */
+  }
+  .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden !important; /* prevent horizontal scroll for the rest */
+    max-width: 100vw;
+  }
+  .affliction-report-tabs-container {
+    width: 100% !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: auto;
+  }
+  .life-area-section-container {
+    margin-left: 0 !important;
+  }
 }

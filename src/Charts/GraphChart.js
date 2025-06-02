@@ -89,7 +89,7 @@ const Custom3DChart = () => {
   const houseSpacing = 90;
 
   return (
-    <div style={{ width: "100%", minHeight: height, background: "#fff", overflowX: "auto", marginTop: '80px', marginLeft:'100px' }}>
+    <div>
       <svg width={width} height={height}>
         {/* Planets in orange */}
         {planetData.map((p, i) => {

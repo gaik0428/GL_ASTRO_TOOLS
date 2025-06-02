@@ -41,11 +41,11 @@ function Prashna () {
                 </div>
                 {/* RIGHT COLUMN: Tab Content */}
                 <div className="tab-content">
-                    {activeTab === 'Arudha' && <div style={{ paddingLeft: '150px' }}>
+                    {activeTab === 'Arudha' && <div className='arudha-section-container'>
                         <ArudhaSection />
                     </div>}
                     {activeTab === 'Area' && (
-                        <div style={{ paddingLeft: '220px' }}>
+                        <div className='area-section-container'>
                             <AreaSection />
                         </div>
                     )}
@@ -56,7 +56,7 @@ function Prashna () {
                             ))}
                         </div>
                     )}
-                    {activeTab === 'Timing' && <div style={{ paddingLeft: '150px' }}>
+                    {activeTab === 'Timing' && <div className='arudha-section-container'>
                         <TimingSection />
                     </div>}
                 </div>

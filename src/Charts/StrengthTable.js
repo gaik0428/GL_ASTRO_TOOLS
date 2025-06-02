@@ -36,8 +36,8 @@ const planetCellStyle = {
 };
 
 const StrengthTable = () => (
-  <div style={{ overflowX: 'auto', marginBottom: '40px', maxWidth: 1000, marginLeft: 100, marginTop: 0 }}>
-    <table style={{ borderCollapse: 'collapse', width: '100%', background: '#fff' }}>
+  <div style={{ overflowX: 'auto', marginBottom: '40px', maxWidth: 1000, margin: '0 auto' }}>
+    <table style={{ borderCollapse: 'collapse', width: '90%', background: '#fff' }}>
       <thead>
         <tr>
           <th style={headerStyle}>Planets</th>

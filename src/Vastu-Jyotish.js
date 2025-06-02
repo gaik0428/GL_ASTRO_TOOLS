@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import Navbar from "./Header/Navbar";
 import Charts from "./Charts";
 import './Home.css';
-import AstroDataContainer from "./Charts/AstroDataContainer";
-import PlanetsTable from "./Charts/PlanetTable";
-import StrengthChart from './Charts/StrengthChart.js';
-import StrengthTable from './Charts/StrengthTable.js';
-import VergasChart from './Charts/VergasChart.js';
-import DashaInfo from './Charts/DashaInfo.js';
 import Footer from "./Footer/Footer";
 import VastuBasicTable from './Charts/VastuBasicTable.js';
 import GraphChart from './Charts/GraphChart.js';
@@ -38,20 +32,20 @@ function VastuJyotish () {
                 </div>
                 {/* RIGHT COLUMN: Tab Content */}
                 <div className="tab-content">
-                    {activeTab === 'Basic' && <div style={{ paddingLeft: '150px' }}>
+                    {activeTab === 'Basic' && <div className='tab-inner-content-1'>
                         <VastuBasicTable />
                     </div>}
                     {activeTab === 'Graph' && (
-                        <div style={{ paddingLeft: '120px' }}>
+                        <div className='graph-chart-container'>
                             <GraphChart />
                         </div>
                     )}
                     {activeTab === 'Life Area' && (
-                    <div className="vargas-grid">
+                    <div className='life-area-section-container'>
                         <LifeAreaSection />
                     </div>
                     )}
-                    {activeTab === 'Vastu' && <div style={{ paddingLeft: '150px' }}>
+                    {activeTab === 'Vastu' && <div className='vastu-section-container'>
                         <VastuSection />
                     </div>}
                 </div>

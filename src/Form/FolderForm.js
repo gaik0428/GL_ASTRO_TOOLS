@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import './FolderForm.css'; // Assuming you have a CSS file for styles
 
 const buttonStyle = {
   display: 'block',
@@ -36,6 +37,7 @@ function FolderForm({ onOpenChart, onOpenNotes, onClose }) {
   return (
     <div
       ref={dropdownRef}
+      className="folder-form-dropdown"
       style={{
         position: 'absolute',
         top: '100%',
@@ -52,10 +54,9 @@ function FolderForm({ onOpenChart, onOpenNotes, onClose }) {
         marginTop: '8px',
       }}
     >
-      {/* ...rest of your dropdown code... */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8 }}>
+      <div className="folder-form-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8 }}>
         <img
-          src="/GL Astro Tools UI/folder.png"
+          src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/folder.png`}
           alt="File"
           style={{ width: 48, height: 48, marginRight: 10 }}
         />

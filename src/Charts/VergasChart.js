@@ -36,10 +36,11 @@ const VergasChart = () => {
       <div style={{
         display: 'flex',
         width: '230px',
-        marginBottom: '30px',
         fontSize: '14px',
         justifyContent: 'center',
-        marginLeft: '30px',
+        margin: '0 auto',
+        marginTop: '10px',
+        marginBottom: '10px',
       }}>
         <div style={{
           padding: '4px 8px',

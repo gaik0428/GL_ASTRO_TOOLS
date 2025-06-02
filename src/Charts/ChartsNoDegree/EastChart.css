@@ -1,0 +1,54 @@
+.square {
+    display: grid;
+    grid-template-columns: repeat(3, 87px);
+    grid-template-rows: repeat(3, 87px);
+    border: 3px solid black;
+    background-color: black;
+    gap: 2px;
+    width: 265px;
+    position: relative; /* Needed for absolutely positioned lines */
+}
+
+.diagonal-line-1,
+.diagonal-line-2,
+.diagonal-line-3,
+.diagonal-line-4 {
+    position: absolute;
+    width: 125px;
+    height: 3px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+}
+
+.diagonal-line-1 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.diagonal-line-2 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.diagonal-line-3 {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.diagonal-line-4 {
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+
+@media (min-width: 1366px) and (max-width: 1640px) {
+    .square {
+        grid-template-columns: repeat(3, 75px);
+        grid-template-rows: repeat(3, 75px);
+        width: 230px;
+    }
+    .diagonal-line-1,
+    .diagonal-line-2,
+    .diagonal-line-3,
+    .diagonal-line-4 {
+        width: 105px;
+    }
+}

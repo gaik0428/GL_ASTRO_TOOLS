@@ -1,0 +1,33 @@
+.varga-table-container {
+  overflow-x: auto;
+  background: #fff;
+  margin-top: 120px;
+  margin-left: 30px;
+  margin-bottom: 113px;
+}
+
+.varga-table {
+  border-collapse: collapse;
+  min-width: 800px;
+  width: 88%;
+}
+
+@media (max-width: 1366px) {
+  .varga-table-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .varga-table {
+    min-width: 700px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 700px) {
+  .varga-table-container {
+    min-width: 600px;
+    width: 100%;
+    margin-left: 0;
+  }
+}

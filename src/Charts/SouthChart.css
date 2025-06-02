@@ -10,7 +10,7 @@
   background: white;
 }
 
-@media (max-width: 1640px) {
+@media (max-width: 1366px) {
   .south-chart {
     width: 95vw !important;
     height: 95vw !important;

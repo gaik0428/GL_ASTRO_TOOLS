@@ -39,26 +39,26 @@ function AfflictionReport() {
                 </div>
                 {/* RIGHT COLUMN: Tab Content */}
                 <div className="tab-content">
-                    {activeTab === 'Graph' && <div style={{ paddingLeft: '100px' }}>
+                    {activeTab === 'Graph' && <div className='graph-chart-container'>
                         <GraphChart />
                     </div>}
                     {activeTab === 'Planet' && (
-                        <div style={{ paddingLeft: '120px' }}>
+                        <div className='affliction-planet-table-container'>
                             <AfflictionPlanetTable />
                         </div>
                     )}
                     {activeTab === 'House' && (
-                        <div style={{ paddingLeft: '120px' }}>
+                        <div className='affliction-planet-table-container'>
                             <HouseTable />
                         </div>
                     )}
                     {activeTab === '10 Varga' && (
-                        <div style={{ paddingLeft: '120px' }}>
+                        <div className='affliction-planet-table-container'>
                             <VargaTable />
                         </div>
                     )}
                     {activeTab === 'Life Area' && (
-                        <div style={{ paddingLeft: '120px' }}>
+                        <div className='life-area-section-container'>
                             <LifeAreaSection />
                         </div>
                     )}

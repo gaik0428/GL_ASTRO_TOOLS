@@ -1,4 +1,5 @@
 import React from 'react';
+import './SouthChart.css';
 
 const SouthChart = () => {
   // Same chart data as the North chart
@@ -266,16 +267,7 @@ const SouthChart = () => {
     <div style={{ paddingLeft: '10px' }}>
 
       {/* South Indian Chart Grid */}
-      <div style={{
-        width: '270px',
-        height: '270px',
-        border: '2.5px solid black',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gridTemplateRows: 'repeat(4, 1fr)',
-        boxSizing: 'border-box',
-        position: 'relative'
-      }}>
+      <div className='south-grid'>
         <div
           style={{
             position: 'absolute',

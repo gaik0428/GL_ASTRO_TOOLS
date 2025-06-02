@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LifeAreaSection.css";
 
 const houseHeaders = [
   "House Factors", "Somyas", "1,5,9 Lords", "Kruras", "6,8,12 Lords", "Separative"
@@ -21,7 +22,6 @@ const lordRows = [
 const cellStyle = {
   border: "2px solid #222",
   fontWeight: 700,
-  fontSize: 16,
   textAlign: "center",
   padding: "4px 0",
   fontFamily: "Segoe UI, Arial, sans-serif"
@@ -31,16 +31,14 @@ const headerBlue = {
   ...cellStyle,
   background: "#2f75b5",
   color: "#fff",
-  fontWeight: 700,
-  fontSize: 20
+  fontWeight: 700
 };
 
 const headerYellow = {
   ...cellStyle,
   background: "#ffc000",
   color: "#222",
-  fontWeight: 700,
-  fontSize: 20
+  fontWeight: 700
 };
 
 const leftCol = {
@@ -48,7 +46,6 @@ const leftCol = {
   background: "#fff",
   color: "#222",
   fontWeight: 700,
-  fontSize: 16,
   textAlign: "center",
   paddingLeft: 18
 };
@@ -65,61 +62,65 @@ const redCell = {
   color: "#fff"
 };
 
+const careerOptions = [
+  "Career",
+  "Finance",
+  "Relationships",
+  "Health",
+  "Education"
+];
+
 const LifeAreaSection = () => {
   const [toggle, setToggle] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedArea, setSelectedArea] = useState(careerOptions[0]);
 
+  const handleDropdownSelect = (option) => {
+    setSelectedArea(option);
+    setDropdownOpen(false);
+  };
 
   return (
-    <div style={{ background: "#fff", padding: 0, width: 1100, marginTop: 150, marginLeft: 40, marginBottom: 142 }}>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Section Title */}
-        <div style={{
-          background: "#2f75b5",
-          color: "#fff",
-          fontWeight: 700,
-          fontSize: 24,
-          padding: "8px 18px",
-          width: 340,
-          borderRadius: 3,
-          marginBottom: 10
-        }}>
-          Career <span style={{ float: "right", fontSize: 24, fontWeight: 400 }}>&#9660;</span>
+    <div className="life-area-section">
+      <div className="life-area-section-header">
+        {/* Dropdown Section */}
+        <div className="life-area-dropdown-wrapper">
+          <button
+            className="life-area-dropdown-btn"
+            onClick={() => setDropdownOpen((v) => !v)}
+            aria-expanded={dropdownOpen}
+          >
+            {selectedArea}
+            <span className="life-area-dropdown-arrow">&#9660;</span>
+          </button>
+          {dropdownOpen && (
+            <ul className="life-area-dropdown-list">
+              {careerOptions.map((option) => (
+                <li
+                  key={option}
+                  className={`life-area-dropdown-item${option === selectedArea ? " selected" : ""}`}
+                  onClick={() => handleDropdownSelect(option)}
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         {/* Toggle */}
-        <div style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
+        <div className="life-area-toggle-container">
           <button
             onClick={() => setToggle((v) => !v)}
             aria-pressed={toggle}
-            style={{
-              width: 90,
-              height: 48,
-              border: "4px solid #1e7fc1",
-              borderRadius: 30,
-              display: "flex",
-              alignItems: "center",
-              marginRight: 18,
-              background: toggle ? "#1e7fc1" : "transparent",
-              cursor: "pointer",
-              padding: 0,
-              outline: "none",
-              position: "relative",
-              transition: "background 0.2s"
-            }}
+            className={`life-area-toggle-btn${toggle ? " on" : ""}`}
           >
-            <div style={{
-              width: 38,
-              height: 38,
-              borderRadius: "50%",
-              background: toggle ? "#fff" : "#0070b8",
-              marginLeft: toggle ? 42 : 2,
-              transition: "margin 0.2s, background 0.2s"
-            }} />
+            <div className={`life-area-toggle-slider${toggle ? " on" : ""}`} />
           </button>
-          <span style={{ fontSize: 20, fontWeight: 700, color: "#222" }}>Prediction through Rashi</span>
+          <span className="life-area-font-size life-area-toggle-label">Prediction through Rashi</span>
         </div>
       </div>
       {/* House Factors Table */}
-      <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: 18 }}>
+      <table className="life-area-table">
         <colgroup>
           {houseHeaders.map((_, index) => (
             <col key={index} style={{ width: `${100 / houseHeaders.length}%` }} />
@@ -128,17 +129,18 @@ const LifeAreaSection = () => {
         <thead>
           <tr>
             {houseHeaders.map((h, i) => (
-              <th key={i} style={headerBlue}>{h}</th>
+              <th key={i} className='life-area-font-size' style={headerBlue}>{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {houseRows.map((row, i) => (
             <tr key={i}>
-              <td style={leftCol}>{row[0]}</td>
+              <td className='life-area-font-size' style={leftCol}>{row[0]}</td>
               {row.slice(1).map((cell, j) => (
                 <td
                   key={j}
+                  className="life-area-font-size"
                   style={
                     j < 2
                       ? greenCell
@@ -153,7 +155,7 @@ const LifeAreaSection = () => {
         </tbody>
       </table>
       {/* Lord Factors Table */}
-      <table style={{ borderCollapse: "collapse", width: "100%" }}>
+      <table className="life-area-table">
         <colgroup>
             {lordHeaders.map((_, index) => (
               <col key={index} style={{ width: `${100 / lordHeaders.length}%` }} />
@@ -162,17 +164,18 @@ const LifeAreaSection = () => {
         <thead>
           <tr>
             {lordHeaders.map((h, i) => (
-              <th key={i} style={headerYellow}>{h}</th>
+              <th key={i} className='life-area-font-size' style={headerYellow}>{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {lordRows.map((row, i) => (
             <tr key={i}>
-              <td style={leftCol}>{row[0]}</td>
+              <td className='life-area-font-size' style={leftCol}>{row[0]}</td>
               {row.slice(1).map((cell, j) => (
                 <td
                   key={j}
+                  className='life-area-font-size'
                   style={
                     j < 2
                       ? greenCell

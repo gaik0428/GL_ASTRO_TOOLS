@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 1640px) {
+@media (max-width: 1366px) {
   .east-chart {
     width: 95vw !important;
     grid-template-columns: repeat(3, 1fr) !important;

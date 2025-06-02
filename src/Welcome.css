@@ -164,7 +164,7 @@
 }
 
 /* Responsive styles */
-@media (max-width: 1640px) {
+@media (max-width: 1366px) {
   .main-container {
     margin-top: 50px;
     gap: 10px;

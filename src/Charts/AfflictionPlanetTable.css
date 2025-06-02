@@ -1,0 +1,104 @@
+.affliction-planet-table-grid {
+  overflow-x: auto;
+  margin-top: 80px;
+  margin-bottom: 75px;
+}
+
+.affliction-planet-table-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+  margin-right: 180px;
+}
+
+.affliction-planet-table {
+  border-collapse: collapse;
+  min-width: 800px;
+  width: 88%;
+  table-layout: fixed;
+}
+
+
+
+.affliction-planet-table-cell {
+  width: 100%;
+  border: 2px solid black;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  padding: 8px 10px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.affliction-planet-table-header {
+  background: #0070b8;
+  color: #fff;
+  font-size: 18px;
+  border: 2px solid black;
+  padding: 10px 10px;
+}
+
+@media (max-width: 1640px) {
+  .affliction-planet-table-cell {
+    font-size: 16px;
+  }
+
+  .affliction-planet-table-toggle-container {
+    margin-right: 130px;
+  }
+
+  .affliction-planet-table {
+    margin-left: 25px;
+  }
+  
+  .affliction-planet-table-header {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .affliction-planet-table-grid {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .affliction-planet-table-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .affliction-planet-table {
+    min-width: 700px;
+    width: 95%;
+  }
+
+  .affliction-planet-table-cell {
+    font-size: 14px;
+  }
+  
+  .affliction-planet-table-header {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .affliction-planet-table {
+    min-width: 600px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .affliction-planet-table-cell {
+    font-size: 12px;
+  }
+  
+  .affliction-planet-table-header {
+    font-size: 12px;
+  }
+}

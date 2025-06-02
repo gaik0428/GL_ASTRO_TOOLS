@@ -67,7 +67,7 @@ const renderHouseContent = (houseNo, center = false) => {
 
 const EastChartIcon = () => {
   return (
-    <div style={{ paddingLeft: '10px' }}>
+    <div>
       {/* East Indian Chart - 3x3 Grid */}
       <div style={{
         display: 'grid',

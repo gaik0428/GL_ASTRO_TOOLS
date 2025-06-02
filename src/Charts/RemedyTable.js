@@ -1,4 +1,6 @@
 import React from "react";
+import "./RemedyTable.css";
+import { useState } from "react";
 
 const remedyData = [
   {
@@ -208,80 +210,125 @@ function renderCellContent(content, textStyle = {}) {
   return <span style={baseStyle}>{content?.text || ""}</span>;
 }
 
+const jobOptions = [
+  "Job",
+  "Business",
+  "Education",
+  "Marriage",
+  "Health"
+];
+
 const RemedyTable = () => {
-  // Find the Benefic/Malefic row for reference
   const beneficMaleficRow = remedyData.find(row => row.label === "Benefic / Malefic");
-  
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(jobOptions[0]);
+
+  const handleDropdownSelect = (option) => {
+    setSelectedJob(option);
+    setDropdownOpen(false);
+  };
+
   return (
-    <div style={{ background: "#fff", padding: 0, marginTop: -60, marginBottom: 7, minWidth: 1650 }}>
-      <div style={{ display: "flex", justifyContent: "right", gap: 40, alignItems: "center", marginBottom: 10 }}>
-        <div style={blueBg}>
-          <span>Job</span><span style={{ float: "right", fontSize: 28, fontWeight: 400 }}>&#9660;</span>
+    <div className="remedy-table-responsive-wrapper">
+      <div className="remedy-table-header-row">
+        <div className="remedy-table-header-right">
+          <div className="remedy-table-dropdown-wrapper">
+            <button
+              className="remedy-table-dropdown-btn"
+              onClick={() => setDropdownOpen((v) => !v)}
+              aria-expanded={dropdownOpen}
+            >
+              {selectedJob}
+              <span className="remedy-table-dropdown-arrow">&#9660;</span>
+            </button>
+            {dropdownOpen && (
+              <ul className="remedy-table-dropdown-list">
+                {jobOptions.map((option) => (
+                  <li
+                    key={option}
+                    className={`remedy-table-dropdown-item${option === selectedJob ? " selected" : ""}`}
+                    onClick={() => handleDropdownSelect(option)}
+                  >
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className="remedy-table-section-title">Remedies For {selectedJob}</div>
         </div>
-        <div style={sectionTitle}>Remedies For Job</div>
       </div>
-      <table style={{ borderCollapse: "collapse", width: "100%" }}>
-        <colgroup>
-          <col style={{ width: "25%" }} />
-          <col style={{ width: "25%" }} />
-          <col style={{ width: "25%" }} />
-          <col style={{ width: "25%" }} />
-        </colgroup>
-        <thead>
-          <tr>
-            <th style={orangeHeader}>Houses & Karaka</th>
-            <th style={orangeHeader}>
-              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
-                <div style={{ borderBottom: "1.5px solid #222", paddingBottom: 6 }}>House</div>
-                <div style={{ paddingTop: 6, fontWeight: 700, fontSize: 12 }}>6th House</div>
-              </div>
-            </th>
-            <th style={orangeHeader}>
-              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
-                <div style={{ borderBottom: "1.5px solid #222", paddingBottom: 6 }}>Karaka</div>
-                <div style={{ paddingTop: 6, fontWeight: 700, fontSize: 12 }}>Saturn</div>
-              </div>
-            </th>
-            <th style={orangeHeader}>
-              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
-                <div style={{ borderBottom: "1.5px solid #222", paddingBottom: 6 }}>House from Karaka</div>
-                <div style={{ paddingTop: 6, fontWeight: 700, fontSize: 12 }}>10th House</div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {remedyData.slice(1).map((row, i) => {
-            // Determine cell styles based on conditions
-            const isGreenForHouse = row.label === "Free Will" && parsePercentage(row.house) > 50;
-            const isGreenForKaraka = row.label === "Free Will" && parsePercentage(row.karaka) > 50;
-            const isGreenForHouseFromKaraka = row.label === "Free Will" && parsePercentage(row.houseFromKaraka) > 50;
-            
-            // Determine text styles for remedy rows
-            const houseTextStyle = shouldApplyRedText(row.label, beneficMaleficRow, "house") ? redText : 
-                                   shouldApplyBlueText(row.label, beneficMaleficRow, "house") ? blueText : {};
-            const karakaTextStyle = shouldApplyRedText(row.label, beneficMaleficRow, "karaka") ? redText :
-                                    shouldApplyBlueText(row.label, beneficMaleficRow, "karaka") ? blueText : {};
-            const houseFromKarakaTextStyle = shouldApplyRedText(row.label, beneficMaleficRow, "houseFromKaraka") ? redText :
-                                             shouldApplyBlueText(row.label, beneficMaleficRow, "houseFromKaraka") ? blueText : {};
-            
-            return (
-              <tr key={i}>
-                <td style={orangeLeft}>{row.label}</td>
-                <td style={isGreenForHouse ? greenCell : cell}>
-                  {renderCellContent(row.house, houseTextStyle)}
-                </td>
-                <td style={isGreenForKaraka ? greenCell : cell}>
-                  {renderCellContent(row.karaka, karakaTextStyle)}
-                </td>
-                <td style={isGreenForHouseFromKaraka ? greenCell : cell}>
-                  {renderCellContent(row.houseFromKaraka, houseFromKarakaTextStyle)}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className="remedy-table-scroll-x">
+        <table style={{ borderCollapse: "collapse", width: "100%" }}>
+          <colgroup>
+            <col style={{ width: "25%" }} />
+            <col style={{ width: "25%" }} />
+            <col style={{ width: "25%" }} />
+            <col style={{ width: "25%" }} />
+          </colgroup>
+          <thead>
+            <tr>
+              <th style={orangeHeader}>Houses & Karaka</th>
+              <th style={orangeHeader}>
+                <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
+                  <div style={{ borderBottom: "1.5px solid #222", paddingBottom: 6 }}>House</div>
+                  <div style={{ paddingTop: 6, fontWeight: 700, fontSize: 12 }}>6th House</div>
+                </div>
+              </th>
+              <th style={orangeHeader}>
+                <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
+                  <div style={{ borderBottom: "1.5px solid #222", paddingBottom: 6 }}>Karaka</div>
+                  <div style={{ paddingTop: 6, fontWeight: 700, fontSize: 12 }}>Saturn</div>
+                </div>
+              </th>
+              <th style={orangeHeader}>
+                <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
+                  <div style={{ borderBottom: "1.5px solid #222", paddingBottom: 6 }}>House from Karaka</div>
+                  <div style={{ paddingTop: 6, fontWeight: 700, fontSize: 12 }}>10th House</div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {remedyData.slice(1).map((row, i) => {
+              const isGreenForHouse = row.label === "Free Will" && parsePercentage(row.house) > 50;
+              const isGreenForKaraka = row.label === "Free Will" && parsePercentage(row.karaka) > 50;
+              const isGreenForHouseFromKaraka = row.label === "Free Will" && parsePercentage(row.houseFromKaraka) > 50;
+
+              const houseTextStyle = shouldApplyRedText(row.label, beneficMaleficRow, "house")
+                ? redText
+                : shouldApplyBlueText(row.label, beneficMaleficRow, "house")
+                ? blueText
+                : {};
+              const karakaTextStyle = shouldApplyRedText(row.label, beneficMaleficRow, "karaka")
+                ? redText
+                : shouldApplyBlueText(row.label, beneficMaleficRow, "karaka")
+                ? blueText
+                : {};
+              const houseFromKarakaTextStyle = shouldApplyRedText(row.label, beneficMaleficRow, "houseFromKaraka")
+                ? redText
+                : shouldApplyBlueText(row.label, beneficMaleficRow, "houseFromKaraka")
+                ? blueText
+                : {};
+
+              return (
+                <tr key={i}>
+                  <td style={orangeLeft}>{row.label}</td>
+                  <td style={isGreenForHouse ? greenCell : cell}>
+                    {renderCellContent(row.house, houseTextStyle)}
+                  </td>
+                  <td style={isGreenForKaraka ? greenCell : cell}>
+                    {renderCellContent(row.karaka, karakaTextStyle)}
+                  </td>
+                  <td style={isGreenForHouseFromKaraka ? greenCell : cell}>
+                    {renderCellContent(row.houseFromKaraka, houseFromKarakaTextStyle)}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import './EastChart.css';
 
 const EastChart = () => {
   // Same chart data as the North chart
@@ -268,32 +269,15 @@ const EastChart = () => {
     <div style={{ paddingLeft: '10px' }}>
 
       {/* East Indian Chart - 3x3 Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 89px)',
-        gridTemplateRows: 'repeat(3, 89px)',
-        border: '3px solid black',
-        backgroundColor: 'black',
-        gap: '2px',
-        width: '271px',
-      }}>
+      <div className='square'>
         {/* Top-left corner - split diagonally (Houses 3 and 2) */}
         <div style={{
           position: 'relative',
           backgroundColor: 'white',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {/* Diagonal line */}
-          <div style={{
-            position: 'absolute',
-            width: '120px',
-            backgroundColor: 'black',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%) rotate(45deg)',
-            transformOrigin: 'center',
-            height: '4px',
-          }}></div>
+          <div className='diagonal-line-1'></div>
           
           {/* House 1 (top triangle) */}
           <div style={{
@@ -328,7 +312,7 @@ const EastChart = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {renderHouseContent(12)}
         </div>
@@ -337,19 +321,10 @@ const EastChart = () => {
         <div style={{
           position: 'relative',
           backgroundColor: 'white',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {/* Diagonal line */}
-          <div style={{
-            position: 'absolute',
-            width: '120px',
-            backgroundColor: 'black',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%) rotate(-45deg)',
-            transformOrigin: 'center',
-            height: '4px',
-          }}></div>
+          <div className='diagonal-line-2'></div>
           
           {/* House 11 (top triangle) */}
           <div style={{
@@ -384,7 +359,7 @@ const EastChart = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {renderHouseContent(3)}
         </div>
@@ -392,7 +367,7 @@ const EastChart = () => {
         {/* Center - Empty */}
         <div style={{
           backgroundColor: '#f8f9fa',
-          border: '2px solid black',
+          border: '1px solid black',
         }}></div>
 
         {/* Middle right - House 9 */}
@@ -401,7 +376,7 @@ const EastChart = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {renderHouseContent(9)}
         </div>
@@ -410,19 +385,10 @@ const EastChart = () => {
         <div style={{
           position: 'relative',
           backgroundColor: 'white',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {/* Diagonal line */}
-          <div style={{
-            position: 'absolute',
-            width: '120px',
-            backgroundColor: 'black',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%) rotate(-45deg)',
-            transformOrigin: 'center',
-            height: '4px',
-          }}></div>
+          <div className='diagonal-line-3'></div>
           
           {/* House 4 (left triangle) */}
           <div style={{
@@ -457,7 +423,7 @@ const EastChart = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {renderHouseContent(6)}
         </div>
@@ -466,20 +432,10 @@ const EastChart = () => {
         <div style={{
           position: 'relative',
           backgroundColor: 'white',
-          border: '2px solid black',
+          border: '1px solid black',
         }}>
           {/* Diagonal line */}
-          <div style={{
-            position: 'absolute',
-            width: '120px',
-            backgroundColor: 'black',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%) rotate(45deg)',
-            transformOrigin: 'center',
-            height: '4px',
-            
-          }}></div>
+          <div className='diagonal-line-4'></div>
           
           {/* House 7 (left triangle) */}
           <div style={{

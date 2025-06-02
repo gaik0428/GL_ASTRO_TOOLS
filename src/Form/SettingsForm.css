@@ -1,0 +1,28 @@
+@media (max-width: 600px) {
+  .settings-form-dropdown {
+    min-width: 60vw !important;
+    max-width: 50vw !important;
+    left: 50% !important;
+    transform: translateX(-70%) !important;
+    padding: 10px 4px 4px 4px !important;
+    border-radius: 14px !important;
+  }
+  .settings-form-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+  .settings-form-header img {
+    width: 36px !important;
+    height: 36px !important;
+    margin-right: 0 !important;
+    margin-bottom: 4px !important;
+  }
+  .settings-form-header span {
+    font-size: 22px !important;
+  }
+  .settings-form-dropdown button {
+    font-size: 16px !important;
+    padding: 10px 4px 10px 4px !important;
+  }
+}

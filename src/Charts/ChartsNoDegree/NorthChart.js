@@ -1,4 +1,5 @@
 import React from 'react';
+import './NorthChart.css';
 
 const NorthChart = () => {
   // JSON data that show all houses having 4 planets 
@@ -281,36 +282,10 @@ const NorthChart = () => {
   return (
     <div style={{ paddingLeft: '10px' }}>
 
-      <div style={{
-        width: '270px',
-        height: '270px',
-        border: '6px solid black',
-        position: 'relative',
-        boxSizing: 'border-box'
-      }}>
+      <div className='grid'>
         {/* Diagonal Lines */}
-        <div style={{
-          position: 'absolute',
-          width: '370px',
-          height: '1px',
-          background: 'black',
-          top: '50%',
-          left: '50%',
-          transformOrigin: 'center',
-          border: '1px solid black',
-          transform: 'translate(-50%, -50%) rotate(45deg)'
-        }}></div>
-        <div style={{
-          position: 'absolute',
-          width: '370px',
-          height: '1px',
-          background: 'black',
-          top: '50%',
-          left: '50%',
-          transformOrigin: 'center',
-          border: '1px solid black',
-          transform: 'translate(-50%, -50%) rotate(-45deg)'
-        }}></div>
+        <div className='north-diagonal-line-1'></div>
+        <div className='north-diagonal-line-2'></div>
 
         {/* Diamond */}
         <div style={{

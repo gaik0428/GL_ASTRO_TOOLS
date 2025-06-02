@@ -35,12 +35,12 @@ function Home() {
                 {/* RIGHT COLUMN: Tab Content */}
                 <div className="tab-content">
                     {activeTab === 'Basic' && 
-                    <div className="tab-inner-content">
+                    <div className="tab-inner-content-1">
                         <AstroDataContainer />
                         <PlanetsTable />
                     </div>}
                     {activeTab === 'Strength' && (
-                        <div className="tab-inner-content">
+                        <div className="tab-inner-content-2">
                         <StrengthChart />
                         <StrengthTable />
                         </div>
@@ -52,11 +52,10 @@ function Home() {
                         ))}
                         </div>
                     )}
-                    {activeTab === 'Dasha' && <div style={{ paddingLeft: '250px' }}>
-                        <div className="tab-inner-content">
-                        <DashaInfo />
-                        </div>
-                    </div>}
+                    {activeTab === 'Dasha' && 
+                        <div className="tab-inner-content-3">
+                            <DashaInfo />
+                        </div>}
                 </div>
             </div>
             <Footer />

@@ -285,7 +285,7 @@ const EastChart = () => {
           {/* Diagonal line */}
           <div style={{
             position: 'absolute',
-            width: '148%',
+            width: '145%',
             backgroundColor: 'black',
             top: '50%',
             left: '50%',
@@ -341,7 +341,7 @@ const EastChart = () => {
           {/* Diagonal line */}
           <div style={{
             position: 'absolute',
-            width: '148%',
+            width: '145%',
             backgroundColor: 'black',
             top: '50%',
             left: '50%',
@@ -414,7 +414,7 @@ const EastChart = () => {
           {/* Diagonal line */}
           <div style={{
             position: 'absolute',
-            width: '148%',
+            width: '145%',
             backgroundColor: 'black',
             top: '50%',
             left: '50%',
@@ -470,7 +470,7 @@ const EastChart = () => {
           {/* Diagonal line */}
           <div style={{
             position: 'absolute',
-            width: '148%',
+            width: '145%',
             backgroundColor: 'black',
             top: '50%',
             left: '50%',

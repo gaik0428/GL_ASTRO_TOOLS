@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import Charts from "./Charts";
+import './ArudhaSection.css';
 
 const ArudhaSection = () => {
     const [arudhaNo, setArudhaNo] = useState("");
 
     return (
-        <div style={{ background: "#fff", marginBottom: 80 }}>
-            <div style={{ display: "flex", justifyContent: "center", textAlign: 'center', gap: 40 }}>
+        <div className="arudha-section-root" style={{ background: "#fff", marginBottom: 80 }}>
+            <div className="arudha-section-flex" style={{ display: "flex", justifyContent: "center", textAlign: 'center', gap: 40 }}>
                 <div>
                     <input
                         type="text"
                         placeholder="Enter Arudha No."
                         value={arudhaNo}
                         onChange={e => setArudhaNo(e.target.value)}
+                        className="arudha-section-input"
                         style={{
                             fontSize: 24,
                             borderRadius: 12,
@@ -23,7 +25,10 @@ const ArudhaSection = () => {
                             color: "#444",
                             outline: "none",
                             marginBottom: 18,
-                            boxShadow: "0 2px 8px #eee"
+                            boxShadow: "0 2px 8px #eee",
+                            width: "100%",
+                            maxWidth: 320,
+                            boxSizing: "border-box"
                         }}
                     />
                     <div>
@@ -31,7 +36,7 @@ const ArudhaSection = () => {
                     </div>
                 </div>
                 {/* Info Table */}
-                <div style={{ display: "flex", justifyContent: "center", marginTop: 200, marginLeft: 10, textAlign: "left" }}>
+                <div className="arudha-section-info-table" style={{ display: "flex", justifyContent: "center", marginTop: 200, marginLeft: 10, textAlign: "left" }}>
                     <table style={{ fontSize: 24, fontWeight: 700, color: "#222", borderSpacing: 0 }}>
                         <tbody>
                             <tr>

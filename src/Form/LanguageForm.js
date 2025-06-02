@@ -48,7 +48,7 @@ function LanguageForm({ selected, onSelect, onClose }) {
     >
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: 8 }}>
         <img
-          src="/GL Astro Tools UI/languages.png"
+          src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/languages.png`}
           alt="Language"
           style={{ width: 48, height: 48, marginRight: 10 }}
         />

@@ -1,4 +1,5 @@
 import React from 'react';
+import './TimingSection.css';
 
 const timingData = [
   { planet: 'Sun', time: '3.5 Year' },
@@ -11,9 +12,9 @@ const timingData = [
 ];
 
 const TimingSection = () => (
-  <div style={{ display: 'flex', gap: 80, marginLeft: 30, marginTop: 40, marginBottom: 120 }}>
+  <div className="timing-section-root">
     {/* Timing Method 1 */}
-    <div>
+    <div className="timing-section-method">
       <div style={{
         background: '#8ed973',
         color: '#111',
@@ -24,7 +25,8 @@ const TimingSection = () => (
         textAlign: 'center',
         marginBottom: 16,
         border: '2px solid #222',
-        width: 340
+        width: 340,
+        maxWidth: '100%'
       }}>
         TIMING METHOD 1
       </div>
@@ -34,6 +36,7 @@ const TimingSection = () => (
         fontSize: 22,
         fontWeight: 'bold',
         marginTop: 20,
+        maxWidth: '100%'
       }}>
         <thead>
           <tr>
@@ -72,7 +75,7 @@ const TimingSection = () => (
       </table>
     </div>
     {/* Timing Method 2 */}
-    <div>
+    <div className="timing-section-method">
       <div style={{
         background: '#8ed973',
         color: '#111',
@@ -83,7 +86,8 @@ const TimingSection = () => (
         textAlign: 'center',
         marginBottom: 16,
         border: '2px solid #222',
-        width: 340
+        width: 340,
+        maxWidth: '100%'
       }}>
         TIMING METHOD 2
       </div>

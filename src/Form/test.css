@@ -433,42 +433,38 @@
   to   { opacity: 1; }
 }
 
-@media (max-width: 1366px) {
-  .overlay-form {
-    max-height: 98vh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .birth-form-container {
-    width: 98vw;
-    min-width: 0;
-    padding: 10px 8px;
-    max-width: 600px;
-    margin: 16px auto;
-    box-sizing: border-box;
-  }
-  .form-group {
-    gap: 8px;
-  }
-  .form-content {
-    gap: 8px;
-  }
-}
-
 /* Responsive Design */
+
 @media (max-width: 768px) {
   .birth-form-container {
     width: 98vw;
     min-width: 0;
     padding: 10px;
+    border-radius: 18px;
   }
-  
+
+  .form-header h2 {
+    font-size: 18px;
+  }
+
+  .form-content {
+    gap: 6px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-bottom: 0;
+  }
+
   .form-group {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 6px;
+    width: 100%;
   }
-  
+
   .field-label {
     width: 100%;
     min-width: 0;
@@ -476,26 +472,25 @@
     justify-content: flex-start;
     margin-bottom: 2px;
   }
-  
+
   .help-icon {
-    position: absolute;
-    right: 0;
-    top: 5px;
+    margin-left: 0;
+    align-self: flex-end;
   }
-  
+
   .date-inputs,
   .time-inputs,
-  .coordinate-inputs {
+  .coordinate-inputs,
+  .timezone-inputs {
     flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
   }
-  
+
   .calendar-options {
     margin-left: 0;
-  }
-  
-  .form-actions {
-    flex-direction: column;
-    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   .form-input,
@@ -511,5 +506,36 @@
     max-width: 100%;
     font-size: 14px;
     box-sizing: border-box;
+  }
+
+  .date-input,
+  .time-input,
+  .coord-input,
+  .elevation-input,
+  .ampm-select,
+  .direction-select {
+    width: 60px;
+    max-width: 60px;
+    font-size: 13px;
+  }
+
+  .advanced-btn {
+    width: 100%;
+    margin: 8px 0 0 0;
+    align-self: stretch;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .action-btn {
+    min-width: 0;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
   }
 }

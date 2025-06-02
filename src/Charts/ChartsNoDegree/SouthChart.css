@@ -1,0 +1,18 @@
+.south-grid {
+    width: 270px;
+    height: 270px;
+    border: 2.5px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+@media (min-width: 1366px) and (max-width: 1640px) {
+    .south-grid {
+        width: 235px;
+        height: 235px;;
+    }
+}

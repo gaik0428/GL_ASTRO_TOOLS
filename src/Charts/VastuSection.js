@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './VastuSection.css';
 
 const planets = [
   { name: "Sun", house: "9th House", sign: "Taurus", article: "Article Of The Planet Sun As Per Vastu", direction: "North West and West of North West", main: "Temple, Medicine, Lamp, Wooden Goods", exalt: "East and 1st part of East of South East", mool: "East of North East", own: "East of North East" }
@@ -9,7 +10,7 @@ const VastuSection = () => {
   const [selected, setSelected] = useState(planets[0]);
 
   return (
-    <div style={{ maxWidth: 1100, marginTop: 130, marginBottom: 60 }}>
+    <div className='vastu-section-grid'>
 
       <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: 0 }}>
         <thead>

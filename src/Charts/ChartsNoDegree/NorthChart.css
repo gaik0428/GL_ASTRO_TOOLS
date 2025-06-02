@@ -1,0 +1,40 @@
+.grid {
+  width: 270px;
+  height: 270px;
+  border: 6px solid black;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.north-diagonal-line-1,
+.north-diagonal-line-2 {
+  position: absolute;
+  width: 370px;
+  height: 1px;
+  background: black;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  border: 1px solid black;
+}
+
+.north-diagonal-line-1 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.north-diagonal-line-2 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+@media (min-width: 1366px) and (max-width: 1640px) {
+    .grid {
+        width: 235px;
+        height: 235px;
+    }
+    
+    .north-diagonal-line-1,
+    .north-diagonal-line-2 {
+        width: 320px;
+    }
+    }

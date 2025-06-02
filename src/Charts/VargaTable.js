@@ -1,4 +1,5 @@
 import React from "react";
+import "./VargaTable.css"; // Assuming you have a CSS file for styles
 
 const vargaHeaders = [
   "Planets", "Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn"
@@ -144,8 +145,8 @@ const getClassColor = (cls) => {
 };
 
 const VargaTable = () => (
-  <div style={{ overflowX: "auto", background: "#fff", marginTop: 120, marginLeft: 30, marginBottom: 113 }}>
-    <table style={{ borderCollapse: "collapse", minWidth: 800, width: "95%" }}>
+  <div className="varga-table-container">
+    <table className="varga-table">
       <colgroup>
         {vargaHeaders.map((_, index) => (
           <col key={index} style={{ width: `${120 / vargaHeaders.length}%` }} />

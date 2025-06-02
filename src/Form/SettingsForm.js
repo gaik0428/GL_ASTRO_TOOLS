@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import './SettingsForm.css';
 
 const itemStyle = {
   display: 'block',
@@ -54,6 +55,7 @@ function SettingsForm({ onSelect, onClose }) {
   return (
     <div
       ref={dropdownRef}
+      className="settings-form-dropdown"
       style={{
         position: 'absolute',
         top: '100%',
@@ -70,9 +72,9 @@ function SettingsForm({ onSelect, onClose }) {
         marginTop: '8px',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',marginBottom: 8 }}>
+      <div className="settings-form-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 8 }}>
         <img
-          src="/GL Astro Tools UI/settings.png"
+          src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/settings.png`}
           alt="Settings"
           style={{ width: 48, height: 48, marginRight: 10 }}
         />

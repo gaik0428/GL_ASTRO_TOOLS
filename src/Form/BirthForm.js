@@ -82,12 +82,13 @@ function BirthForm({ onClose }) {
       <div className="overlay-form">
             <div className="birth-form-container">
             <div className="form-header">
-                <img
-                src="/GL Astro Tools UI/birth.png"
-                alt="Birth"
-                className="baby-icon"
-                style={{ width: 50, height: 50, marginRight: 6, verticalAlign: 'middle' }}
-                />
+            <img
+            src={`${process.env.PUBLIC_URL}/GL Astro Tools UI/birth.png`}
+            alt="Birth"
+            className="baby-icon"
+            style={{ width: 50, height: 50, marginRight: 6, verticalAlign: 'middle' }}
+            />
+
                 <h2 style={{ fontWeight: 700 }}>Birth Data</h2>
             </div>
 

@@ -4,6 +4,7 @@ import SouthChartIcon from './Charts/ChartsWithIcon/SouthChartIcon';
 import EastChartIcon from './Charts/ChartsWithIcon/EastChartIcon';
 import DivisionForm from './Form/DivisionForm';
 import ChartContextMenu from './Form/ChartsContextMenuForm';
+import './AreaSection.css';
 
 const AreaSection = () => {
   const [currentChart, setCurrentChart] = useState('North');
@@ -21,7 +22,6 @@ const AreaSection = () => {
   };
 
   const renderChart = () => {
-
     switch (currentChart) {
       case 'North':
         return <NorthChartIcon />;
@@ -35,10 +35,10 @@ const AreaSection = () => {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 40, marginTop: -7, marginBottom: 80 }}>
+    <div className="area-section-root" style={{ display: 'flex', alignItems: 'flex-start', gap: 40, marginTop: -7, marginBottom: 80 }}>
       {/* Left: Chart and controls */}
       <div>
-        <div style={{ display: 'flex', alignItems: 'flex-end', marginBottom: 12, marginLeft: 50 }}>
+        <div className="area-section-controls" style={{ display: 'flex', alignItems: 'flex-end', marginBottom: 12, marginLeft: 50 }}>
           <div>
             <div style={{ fontWeight: 'bold', color: '#444', fontSize: 18, marginBottom: 2 }}>Question Life Area</div>
             <select
@@ -86,88 +86,101 @@ const AreaSection = () => {
           </div>
         </div>
 
-      <div style={{
-        display: 'flex',
-        width: '400px',
-        marginBottom: '10px',
-        justifyContent: 'center',
-        marginLeft: '30px',
-      }}>
-        <div style={{
-          padding: '8px 16px',
-          marginRight: '4px',
-          textAlign: 'center',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-          backgroundColor: '#0c6384',
-          color: 'white',
-          borderRadius: '20px'
-        }}
-        onClick={() => setShowDivisionForm(true)}
-        >D-1</div>
-        <div
-          style={{
+        <div className="area-section-chart-switcher" style={{
+          display: 'flex',
+          width: '400px',
+          marginBottom: '10px',
+          justifyContent: 'center',
+          marginLeft: '30px',
+        }}>
+          <div style={{
             padding: '8px 16px',
             marginRight: '4px',
             textAlign: 'center',
             cursor: 'pointer',
             fontWeight: 'bold',
-            backgroundColor: currentChart === 'North' ? '#7b2cbf' : 'transparent',
-            color: currentChart === 'North' ? 'white' : '#7b2cbf',
-            borderRadius: '5px'
+            backgroundColor: '#0c6384',
+            color: 'white',
+            borderRadius: '20px'
           }}
-          onClick={() => setCurrentChart('North')}
-        >North</div>
-        <div
-          style={{
-            padding: '8px 16px',
-            marginRight: '4px',
-            textAlign: 'center',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            backgroundColor: currentChart === 'South' ? '#7b2cbf' : 'transparent',
-            color: currentChart === 'South' ? 'white' : '#7b2cbf',
-            borderRadius: '5px'
-          }}
-          onClick={() => setCurrentChart('South')}
-        >South</div>
-        <div
-          style={{
-            padding: '8px 16px',
-            marginRight: '4px',
-            textAlign: 'center',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            backgroundColor: currentChart === 'East' ? '#7b2cbf' : 'transparent',
-            color: currentChart === 'East' ? 'white' : '#7b2cbf',
-            borderRadius: '5px'
-          }}
-          onClick={() => setCurrentChart('East')}
-        >East</div>
-      </div>
-      {showDivisionForm && (
-        <DivisionForm
-          selected={selectedDivision}
-          onSelect={key => setSelectedDivision(key)}
-          onClose={() => setShowDivisionForm(false)}
-          onHigherDivisions={() => alert('Show higher divisions')}
-        />
-      )}
-      <div
-        onContextMenu={handleChartContextMenu}
-        style={{ display: 'inline-block', position: 'relative' }}
-      >
-        {renderChart()}
-        {/* Chart context menu */}
-        {showChartMenu && (
-          <ChartContextMenu
-            x={menuPosition.x}
-            y={menuPosition.y}
-            onClose={() => setShowChartMenu(false)}
+            onClick={() => setShowDivisionForm(true)}
+          >D-1</div>
+          <div
+            style={{
+              padding: '8px 16px',
+              marginRight: '4px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              backgroundColor: currentChart === 'North' ? '#7b2cbf' : 'transparent',
+              color: currentChart === 'North' ? 'white' : '#7b2cbf',
+              borderRadius: '5px'
+            }}
+            onClick={() => setCurrentChart('North')}
+          >North</div>
+          <div
+            style={{
+              padding: '8px 16px',
+              marginRight: '4px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              backgroundColor: currentChart === 'South' ? '#7b2cbf' : 'transparent',
+              color: currentChart === 'South' ? 'white' : '#7b2cbf',
+              borderRadius: '5px'
+            }}
+            onClick={() => setCurrentChart('South')}
+          >South</div>
+          <div
+            style={{
+              padding: '8px 16px',
+              marginRight: '4px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              backgroundColor: currentChart === 'East' ? '#7b2cbf' : 'transparent',
+              color: currentChart === 'East' ? 'white' : '#7b2cbf',
+              borderRadius: '5px'
+            }}
+            onClick={() => setCurrentChart('East')}
+          >East</div>
+        </div>
+        {showDivisionForm && (
+          <DivisionForm
+            selected={selectedDivision}
+            onSelect={key => setSelectedDivision(key)}
+            onClose={() => setShowDivisionForm(false)}
+            onHigherDivisions={() => alert('Show higher divisions')}
           />
         )}
+        <div
+          onContextMenu={handleChartContextMenu}
+          className="area-section-chart-scroll"
+          style={{
+            display: 'inline-block',
+            position: 'relative',
+            width: 500,
+            height: 500,
+            maxWidth: '97vw',
+            maxHeight: '100vw',
+            overflowX: 'auto',
+            overflowY: 'auto',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          <div style={{ width: 500, height: 500, display: 'inline-block' }}>
+            {renderChart()}
+          </div>
+          {/* Chart context menu */}
+          {showChartMenu && (
+            <ChartContextMenu
+              x={menuPosition.x}
+              y={menuPosition.y}
+              onClose={() => setShowChartMenu(false)}
+            />
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './HouseTable.css';
 
 const data = [
   {
@@ -257,16 +258,9 @@ const HouseTable = () => {
   };
 
   return (
-    <div style={{ overflowX: "auto", marginTop: "60px", marginLeft: "20px", marginBottom: "72px"}}>
+    <div className='house-table-container'>
         {/* Toggle Container */}
-        <div style={{ 
-            display: 'flex', 
-            justifyContent: 'flex-end', 
-            alignItems: 'center', 
-            marginBottom: '20px',
-            gap: '12px',
-            marginRight: '70px',
-        }}>
+        <div className='house-table-toggle-container'>
             <div 
             style={toggleStyle}
             onClick={() => setShowPlanetNames(!showPlanetNames)}
@@ -283,7 +277,7 @@ const HouseTable = () => {
             </span>
 
         </div>
-        <table style={{ borderCollapse: "collapse", minWidth: 800, width: "97%" }}>
+        <table>
         <colgroup>
           {header.map((_, index) => (
             <col key={index} style={{ width: `${100 / header.length}%` }} />

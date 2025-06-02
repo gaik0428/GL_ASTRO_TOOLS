@@ -86,7 +86,7 @@ const VastuBasicTable = () => {
   ];
 
   return (
-    <div className="planets-table-container" style={{ marginTop: '110px', marginBottom: '80px', width: '95%' }}>
+    <div className="planets-table-container-2">
       <table className="planets-table">
         <thead>
           <tr>
