@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/css/main.fefb4975.css",
-    "main.js": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/js/main.82a5e74b.js",
+    "main.css": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/css/main.380994da.css",
+    "main.js": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/js/main.f40d852d.js",
     "static/js/453.f5787aa1.chunk.js": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js",
     "index.html": "https://gaik0428.github.io/GL_ASTRO_TOOLS/index.html",
-    "main.fefb4975.css.map": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/css/main.fefb4975.css.map",
-    "main.82a5e74b.js.map": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/js/main.82a5e74b.js.map",
+    "main.380994da.css.map": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/css/main.380994da.css.map",
+    "main.f40d852d.js.map": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/js/main.f40d852d.js.map",
     "453.f5787aa1.chunk.js.map": "https://gaik0428.github.io/GL_ASTRO_TOOLS/static/js/453.f5787aa1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fefb4975.css",
-    "static/js/main.82a5e74b.js"
+    "static/css/main.380994da.css",
+    "static/js/main.f40d852d.js"
   ]
 }
